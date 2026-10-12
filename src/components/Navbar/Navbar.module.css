@@ -1,12 +1,27 @@
 /* src/components/Navbar/Navbar.module.css */
 .navbar {
   display: flex;
-  gap: 16px;
+  gap: 32px;
   padding: 16px;
-  background: #eee;
+  position: sticky;
+  top: 0;
 }
 
 .navbar a {
+  flex: 1;
   text-decoration: none;
   color: black;
+  background-color: aliceblue;
+  padding: 20px;
+  border-radius: 20px;
+  color: black;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.navbar a:hover {
+  cursor: pointer;
+  background-color: hsl(208, 100%, 77%);
 }

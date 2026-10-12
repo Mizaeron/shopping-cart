@@ -1,0 +1,12 @@
+.image {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  display: block;
+}
+
+.home {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}

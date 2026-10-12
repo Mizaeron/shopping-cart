@@ -1,0 +1,13 @@
+.shop {
+  background-color: #009e49;
+  display: grid;
+  grid-template-columns: repeat(autofit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
