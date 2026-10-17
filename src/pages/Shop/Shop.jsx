@@ -12,7 +12,7 @@ const products = [
   { id: 5, name: "Bag" },
 ];
 
-function Shop() {
+function Shop({ handleCart }) {
   const [inputValue, setInputValue] = useState({
     1: "",
     2: "",
@@ -21,9 +21,9 @@ function Shop() {
     5: "",
   });
 
-  useEffect(() => {
-    console.log(inputValue);
-  }, [inputValue]);
+  // useEffect(() => {
+  //   console.log(inputValue);
+  // }, [inputValue]);
 
   const handleChange = (id, value) => {
     setInputValue((prev) => ({
@@ -39,7 +39,13 @@ function Shop() {
     }));
   };
 
-  console.log(inputValue);
+  const handleMinus = (id) => {
+    setInputValue((prev) => ({
+      ...prev,
+      [id]: Number(prev[id] || 0) - 1,
+    }));
+  };
+
   return (
     <div className={styles.shop}>
       {products.map((product) => {
@@ -55,13 +61,22 @@ function Shop() {
               onChange={(e) => handleChange(product.id, e.target.value)}
               value={inputValue[product.id]}
             />
-            <div className={styles.icons}>
+            <div className={styles.icons + " " + styles.addRemove}>
               <button type="button" onClick={() => handlePlus(product.id)}>
                 <img src={add} alt="add" />
               </button>
-              <img src={remove} alt="remove" />
+              <button type="button" onClick={() => handleMinus(product.id)}>
+                <img src={remove} alt="remove" />
+              </button>
             </div>
-            <img className={styles.icons} src={cart} alt="cart" />
+            <button
+              type="button"
+              onClick={() =>
+                handleCart(product.name, product.id, inputValue[product.id])
+              }
+            >
+              <img className={styles.icons} src={cart} alt="cart" />
+            </button>
           </div>
         );
       })}
