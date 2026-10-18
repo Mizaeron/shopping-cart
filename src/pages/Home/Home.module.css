@@ -10,3 +10,9 @@
   gap: 20px;
   justify-content: center;
 }
+
+.removeIcon {
+  height: 150px;
+  width: 200px;
+  background-color: aqua;
+}

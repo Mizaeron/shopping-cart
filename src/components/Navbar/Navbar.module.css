@@ -25,3 +25,18 @@
   cursor: pointer;
   background-color: hsl(208, 100%, 77%);
 }
+
+.totalQuantity {
+  display: inline-block;
+  margin-left: 6px;
+  min-width: 24px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: white;
+  color: rgb(247, 5, 5);
+  font-weight: 700;
+  text-align: center;
+  font-size: 12px;
+  position: relative;
+  top: -6px;
+}

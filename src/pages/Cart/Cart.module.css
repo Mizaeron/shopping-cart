@@ -1,3 +1,23 @@
 .cart {
-  color: aliceblue;
+  color: rgb(0, 0, 0);
+}
+
+.cartItems {
+  display: flex;
+  align-items: center;
+  background-color: #ccc;
+  border: 1px solid rgb(191, 191, 202);
+  padding: 10px;
+  max-width: 200px;
+  margin: 5px;
+  gap: 5px;
+}
+
+.button {
+  margin-left: auto;
+}
+
+.removeIcon {
+  /* height: 15px; */
+  display: flex;
 }

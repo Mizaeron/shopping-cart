@@ -21,10 +21,6 @@ function Shop({ handleCart }) {
     5: "",
   });
 
-  // useEffect(() => {
-  //   console.log(inputValue);
-  // }, [inputValue]);
-
   const handleChange = (id, value) => {
     setInputValue((prev) => ({
       ...prev,
