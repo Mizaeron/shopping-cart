@@ -8,25 +8,26 @@ import Navbar from "./components/Navbar/Navbar";
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
-  const handleCart = (name, id, quantity) => {
+  const handleCart = (product, quantity) => {
     setCartItems((prev) => {
-      const existingItem = prev.find((item) => item.id === id);
+      const existingItem = prev.find((item) => item.id === product.id);
 
       if (existingItem) {
         return prev.map((item) =>
-          item.id === id
+          item.id === product.id
             ? { ...item, quantity: item.quantity + Number(quantity) }
             : item,
         );
       }
 
-      return [...prev, { name, id, quantity: Number(quantity) }];
+      return [...prev, { ...product, quantity: Number(quantity) }];
     });
   };
 
   useEffect(() => {
     console.log(cartItems);
-  }, [cartItems]);
+  });
+
   return (
     <>
       <BrowserRouter>

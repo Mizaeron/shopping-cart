@@ -2,15 +2,8 @@ import styles from "./Shop.module.css";
 import add from "../../assets/plus.svg";
 import remove from "../../assets/minus.svg";
 import cart from "../../assets/cart.svg";
-import { useState, useEffect } from "react";
-
-const products = [
-  { id: 1, name: "Coffee" },
-  { id: 2, name: "Dumbbells" },
-  { id: 3, name: "Shoes" },
-  { id: 4, name: "Bottle" },
-  { id: 5, name: "Bag" },
-];
+import { useState } from "react";
+import { useProducts } from "../../hooks/useProducts";
 
 function Shop({ handleCart }) {
   const [inputValue, setInputValue] = useState({
@@ -19,7 +12,24 @@ function Shop({ handleCart }) {
     3: "",
     4: "",
     5: "",
+    6: "",
+    7: "",
+    8: "",
+    9: "",
+    10: "",
+    11: "",
+    12: "",
+    13: "",
+    14: "",
+    15: "",
+    16: "",
+    17: "",
+    18: "",
+    19: "",
+    20: "",
   });
+
+  const products = useProducts();
 
   const handleChange = (id, value) => {
     setInputValue((prev) => ({
@@ -49,7 +59,12 @@ function Shop({ handleCart }) {
 
         return (
           <div key={product.id} className={styles.card}>
-            {product.name}
+            {product.title}
+            <img
+              src={product.image}
+              alt={product.title}
+              style={{ width: "100px", height: "100px", objectFit: "contain" }}
+            />
             <label htmlFor={inputId}> quantity:</label>
             <input
               type="text"
@@ -67,9 +82,7 @@ function Shop({ handleCart }) {
             </div>
             <button
               type="button"
-              onClick={() =>
-                handleCart(product.name, product.id, inputValue[product.id])
-              }
+              onClick={() => handleCart(product, inputValue[product.id] || 1)}
             >
               <img className={styles.icons} src={cart} alt="cart" />
             </button>
